@@ -1,3 +1,4 @@
+import useComponent from "./useComponent";
 import useLogin from "./useLogin";
 
-export { useLogin };
+export { useComponent, useLogin };
