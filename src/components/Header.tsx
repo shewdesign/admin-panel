@@ -1,6 +1,5 @@
 import { Burger, Container, createStyles, Header } from "@mantine/core";
 import React from "react";
-import { useState } from "react";
 import ColorSchemeSwitcher from "./ColorSchemeSwitcher";
 
 const HEADER_HEIGHT = 60;
@@ -84,8 +83,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export default function HeaderResponsive({ opened, setOpened }: any) {
-  const [active, setActive] = useState<string>();
-  const { classes, cx } = useStyles();
+  const { classes } = useStyles();
 
   return (
     <Header height={HEADER_HEIGHT} className={classes.root}>

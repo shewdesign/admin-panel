@@ -11,7 +11,6 @@ import Link from "next/link";
 import React from "react";
 import { useState } from "react";
 import {
-  CalendarStats,
   ChevronLeft,
   ChevronRight,
   Icon as TablerIcon,
@@ -138,13 +137,3 @@ export function LinksGroup({
     </>
   );
 }
-
-const mockdata = {
-  label: "Releases",
-  icon: CalendarStats,
-  links: [
-    { label: "Upcoming releases", link: "/" },
-    { label: "Previous releases", link: "/" },
-    { label: "Releases schedule", link: "/" },
-  ],
-};

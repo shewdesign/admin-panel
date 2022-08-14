@@ -24,7 +24,7 @@ import {
 import { useViewportSize, useLocalStorage } from "@mantine/hooks";
 import { useLogin } from "../hooks";
 import { ModalsProvider } from "@mantine/modals";
-import { Dashboard, X } from "tabler-icons-react";
+import { X } from "tabler-icons-react";
 import HeaderResponsive from "./Header";
 import GoogleButton from "react-google-button";
 
@@ -53,7 +53,7 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
   const [authorized, setAuthorized] = useState<boolean>(false);
   const [error, setError] = useState<any>();
   const [user, setUser] = useState<User>();
-  const { width, height } = useViewportSize();
+  const { width } = useViewportSize();
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "colorScheme",
     defaultValue: "dark",
@@ -227,7 +227,9 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
                   height: "90vh",
                   overflowY: "auto",
                 }}
-              ></Container>
+              >
+                {tabs[tab](data)}
+              </Container>
             </AppShell>
           ) : (
             <Container
@@ -241,7 +243,7 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
               {error && (
                 <Affix position={{ bottom: 20, right: 20 }}>
                   <Transition transition="slide-up" mounted={error}>
-                    {(styles) => (
+                    {() => (
                       <Notification
                         disallowClose
                         title={"Unable to sign in"}

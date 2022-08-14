@@ -64,7 +64,7 @@ export default function NavbarComponent({
   setTab,
   opened,
   info,
-  uploads,
+  
 }: any) {
   const { classes } = useStyles();
   const mockdata = [

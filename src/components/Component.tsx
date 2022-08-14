@@ -89,7 +89,6 @@ const AssetEditor = ({
   name,
   value,
   onChange,
-  required,
 }: {
   name: string;
   value: string;
@@ -177,7 +176,7 @@ const ArrayEditor = ({
   onChange: (value: string[]) => void;
   required: boolean;
 }) => {
-  const [data, setData] = useState<string[]>(value);
+  const [, setData] = useState<string[]>(value);
 
   return (
     <MultiSelect

@@ -122,8 +122,6 @@ export function TableSort({ data }: TableSortProps) {
     setSortedData(sortData(data, { sortBy: field, reversed, search }));
   };
 
-  const [uploadOpened, setUploadOpened] = useState(false);
-
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
     setSearch(value);

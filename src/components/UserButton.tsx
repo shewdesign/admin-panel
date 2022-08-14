@@ -5,7 +5,6 @@ import {
   Menu,
   Text,
   UnstyledButton,
-  useMantineTheme,
 } from "@mantine/core";
 import React, { useState } from "react";
 import { ChevronRight, Logout } from "tabler-icons-react";
@@ -43,8 +42,7 @@ export function UserButton({
   ...others
 }: UserButtonProps) {
   const { classes } = useStyles();
-  const [opened, setOpened] = useState<boolean>(false);
-  const theme = useMantineTheme();
+  const [, setOpened] = useState<boolean>(false);
 
   return (
     <Menu

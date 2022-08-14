@@ -45,7 +45,7 @@ const useComponent = <T>(
         setState(res);
         setStatus("default");
       })
-      .catch((err) => {
+      .catch(() => {
         setStatus("An unexpected error occurred.");
       });
   }, [page, id]);
