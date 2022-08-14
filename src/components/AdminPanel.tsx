@@ -98,20 +98,12 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
   }, [user, authorized]);
 
   useEffect(() => {
-    if (user) {
-      setAuthorized(
-        process.env
-          .NEXT_PUBLIC_AUTHORIZED_USERS!.split(",")
-          .includes(user.providerData[0].email!)
-      );
-      if (!authorized) {
-        setError(
-          authorized
-            ? undefined
-            : "Account not authorized. Please try again later."
-        );
-      }
-    }
+    setAuthorized(loginStatus);
+    setError(
+      loginStatus
+        ? undefined
+        : "Account not authorized. Please try again later."
+    );
   }, [loginStatus]);
 
   return (
