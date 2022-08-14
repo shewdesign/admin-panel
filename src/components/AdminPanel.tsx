@@ -22,7 +22,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useViewportSize, useLocalStorage } from "@mantine/hooks";
-import { useLogin } from "../hooks";
+import useLogin from "../hooks/useLogin";
 import { ModalsProvider } from "@mantine/modals";
 import { X } from "tabler-icons-react";
 import HeaderResponsive from "./Header";
