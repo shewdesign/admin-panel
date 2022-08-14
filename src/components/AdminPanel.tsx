@@ -228,7 +228,10 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
                   overflowY: "auto",
                 }}
               >
-                {tabs[tab](data)}
+                {tabs[tab.split(" | ")[0]]({
+                  ...data,
+                  name: tab.split(" | ")[1],
+                })}
               </Container>
             </AppShell>
           ) : (
