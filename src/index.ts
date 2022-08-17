@@ -8,6 +8,8 @@ import RichTextEditor from "./components/RichTextEditor";
 import { TableSort as Table } from "./components/Table";
 import { UserButton } from "./components/UserButton";
 
+import { Editors } from "./components/Editors";
+
 import useComponent from "./hooks/useComponent";
 import useLogin from "./hooks/useLogin";
 
@@ -23,4 +25,5 @@ export {
   UserButton,
   useComponent,
   useLogin,
+  Editors,
 };
