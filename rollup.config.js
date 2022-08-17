@@ -20,7 +20,7 @@ export default [
   {
     // path to your declaration files root
     input: "index.d.ts",
-    output: [{ file: "index.d.ts", format: "es" }],
+    output: [{ file: "dist/index.d.ts", format: "es" }],
     plugins: [dts()],
   },
 ];
