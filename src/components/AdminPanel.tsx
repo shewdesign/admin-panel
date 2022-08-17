@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Router, useRouter } from "next/router";
-import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import {
+  Auth,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  User,
+} from "firebase/auth";
 import {
   Affix,
   AppShell,
@@ -23,7 +29,14 @@ import { X } from "tabler-icons-react";
 import HeaderResponsive from "./Header";
 import GoogleButton from "react-google-button";
 
-const AdminPanel = ({ tabs, auth, ...data }: any) => {
+const AdminPanel = ({
+  tabs,
+  auth: firebaseAuth,
+  ...data
+}: {
+  tabs: React.ReactNode[];
+  auth: Auth;
+}) => {
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
     const start = () => {
@@ -42,7 +55,6 @@ const AdminPanel = ({ tabs, auth, ...data }: any) => {
     };
   }, []);
 
-  const firebaseAuth = auth;
   const provider = new GoogleAuthProvider();
 
   const [authorized, setAuthorized] = useState<boolean>(false);
@@ -215,6 +227,14 @@ const AdminPanel = ({ tabs, auth, ...data }: any) => {
                   overflowY: "auto",
                 }}
               >
+                {Object.keys(tabs).map((tabName, key) => {
+                  let Tab = tabs[tabName];
+                  return tabName.split(" | ")[0] == tab ? (
+                    <Tab key={key} name={tabName.split(" | ")[1]} {...data} />
+                  ) : (
+                    <></>
+                  );
+                })}
                 {tabs[tab.split(" | ")[0]]({
                   ...data,
                   name: tab.split(" | ")[1],
