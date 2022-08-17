@@ -28,7 +28,7 @@ import { X } from "tabler-icons-react";
 import HeaderResponsive from "./Header";
 import GoogleButton from "react-google-button";
 
-const AdminPanel = ({ tabs, app, ...data }: any) => {
+const AdminPanel = ({ tabs, auth, ...data }: any) => {
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {
     const start = () => {
@@ -47,7 +47,7 @@ const AdminPanel = ({ tabs, app, ...data }: any) => {
     };
   }, []);
 
-  const firebaseAuth = getAuth(app);
+  const firebaseAuth = auth;
   const provider = new GoogleAuthProvider();
 
   const [authorized, setAuthorized] = useState<boolean>(false);
