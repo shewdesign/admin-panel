@@ -223,15 +223,17 @@ const AdminPanel = ({
               >
                 {Object.keys(tabs).map((tabName, key) => {
                   let Tab = tabs[tabName];
-                  return tabName.split(" | ")[0] == tab ? (
-                    <Tab key={key} name={tabName.split(" | ")[1]} {...data} />
-                  ) : (
-                    <></>
+                  return (
+                    <div
+                      key={key}
+                      style={{
+                        display:
+                          tabName.split(" | ")[0] == tab ? "block" : "none",
+                      }}
+                    >
+                      <Tab name={tabName.split(" | ")[1]} {...data} />
+                    </div>
                   );
-                })}
-                {tabs[tab.split(" | ")[0]]({
-                  ...data,
-                  name: tab.split(" | ")[1],
                 })}
               </Container>
             </AppShell>
