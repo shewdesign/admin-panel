@@ -6,7 +6,7 @@ name: Node.js Package
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   publish-gpr:
@@ -22,7 +22,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm i
       - run: npm run build
-      - run: npm ci
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
