@@ -11,7 +11,6 @@ import {
   Drawer,
   LoadingOverlay,
   MantineProvider,
-  Navbar,
   Notification,
   Transition,
   useMantineTheme,
@@ -22,6 +21,7 @@ import { ModalsProvider } from "@mantine/modals";
 import { X } from "tabler-icons-react";
 import HeaderResponsive from "./Header";
 import GoogleButton from "react-google-button";
+import Navbar from "./Navbar";
 
 const AdminPanel = ({
   tabs,
