@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Router, useRouter } from "next/router";
-import {
-  Auth,
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  User,
-} from "firebase/auth";
+import { Auth, GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import {
   Affix,
   AppShell,
