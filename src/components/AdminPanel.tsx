@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Router, useRouter } from "next/router";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  User,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import {
   Affix,
   AppShell,
@@ -71,7 +66,7 @@ const AdminPanel = ({ tabs, auth, ...data }: any) => {
   const [tab, setTab] = useState<string>(router.query.page as string);
   const [loginStatus, tryLogin] = useLogin();
 
-  firebaseAuth.onAuthStateChanged((newUser) => {
+  firebaseAuth.onAuthStateChanged((newUser: any) => {
     if (user != newUser || typeof user == "undefined") {
       setUser(newUser!);
     }

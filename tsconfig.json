@@ -8,8 +8,6 @@
       "allowJs": false,
       "jsx": "react",
       "declaration": true,
-      "emitDeclarationOnly": true,
-      "declarationDir": "dist/dts",
       "moduleResolution": "node",
       "forceConsistentCasingInFileNames": true,
       "noImplicitReturns": true,

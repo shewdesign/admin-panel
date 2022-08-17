@@ -8,23 +8,19 @@ export default [
     output: [
       {
         file: pkg.main,
-        format: "cjs",
+        format: "es",
         exports: "named",
         sourcemap: true,
         strict: false,
       },
     ],
-    plugins: [typescript({ objectHashIgnoreUnknownHack: true })],
+    plugins: [typescript()],
     external: ["react", "react-dom"],
   },
   {
-    input: "./dist/dts/index.d.ts",
-    output: [
-      {
-        file: "dist/index.d.ts",
-        format: "es",
-      },
-    ],
+    // path to your declaration files root
+    input: "index.d.ts",
+    output: [{ file: "index.d.ts", format: "es" }],
     plugins: [dts()],
   },
 ];
